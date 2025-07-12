@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skill Swap Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Skill Swap Admin Dashboard</h1>
+
+  <!-- Login Screen -->
+  <div id="login-screen">
+    <h2>Admin Login</h2>
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter username" autocomplete="off" />
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter password" autocomplete="off" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div id="admin-dashboard">
+
+    <nav class="tabs">
+      <a href="#" class="tab-link active" onclick="showSection('review-skills')">🛠 Review Skills</a>
+      <a href="#" class="tab-link" onclick="showSection('ban-users')">🚫 Ban Users</a>
+      <a href="#" class="tab-link" onclick="showSection('monitor-swaps')">🔄 Monitor Swaps</a>
+      <a href="#" class="tab-link" onclick="showSection('send-announcement')">📣 Send Announcement</a>
+      <a href="#" class="tab-link" onclick="showSection('download-reports')">⬇ Download Reports</a>
+      <a href="#" class="tab-link logout-btn" onclick="logout()">Logout</a>
+    </nav>
+
+    <!-- Review Skills -->
+    <section id="review-skills" class="tab-section active">
+      <h3>Review Newly Added / Reported Skills</h3>
+      <div id="skill-list"></div>
+    </section>
+
+    <!-- Ban Users -->
+    <section id="ban-users" class="tab-section">
+      <h3>User Management - Ban Users</h3>
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Reported Flags</th><th>Action</th></tr>
+        </thead>
+        <tbody id="user-list"></tbody>
+      </table>
+    </section>
+
+    <!-- Monitor Swaps -->
+    <section id="monitor-swaps" class="tab-section">
+      <h3>Swap Monitoring</h3>
+      <label for="swap-filter">Filter by status:</label>
+      <select id="swap-filter" class="filter-select" onchange="filterSwaps()">
+        <option value="all">All</option>
+        <option value="pending" selected>Pending</option>
+        <option value="accepted">Accepted</option>
+        <option value="cancelled">Cancelled</option>
+        <option value="completed">Completed</option>
+      </select>
+      <div id="swap-list"></div>
+    </section>
+
+    <!-- Send Announcement -->
+    <section id="send-announcement" class="tab-section">
+      <h3>Send Platform-Wide Announcement</h3>
+      <label for="announce-title">Title</label>
+      <input type="text" id="announce-title" placeholder="Announcement Title" />
+      <label for="announce-message">Message</label>
+      <textarea id="announce-message" rows="5" placeholder="Write your message here..."></textarea>
+      <label for="announce-time">Schedule Time (optional)</label>
+      <input type="datetime-local" id="announce-time" />
+      <button onclick="sendAnnouncement()">Send Announcement</button>
+      <p id="announce-status" class="status-message"></p>
+    </section>
+
+    <!-- Download Reports -->
+    <section id="download-reports" class="tab-section">
+      <h3>Download Reports</h3>
+      <button onclick="downloadUserActivity()">⬇ Download User Activity Log (CSV)</button>
+      <button onclick="downloadSwapStats()">⬇ Download Swap Stats (CSV)</button>
+      <button onclick="downloadFeedbackData()">⬇ Download Feedback Data (CSV)</button>
+    </section>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+</html>

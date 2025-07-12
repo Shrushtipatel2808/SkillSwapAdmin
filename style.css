@@ -1,0 +1,186 @@
+/* ===== Base Styles ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 10px;
+}
+.container {
+  width: 900px;
+  background: #1e1e2f;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(50, 50, 93, 0.25);
+  padding: 30px 40px 50px;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: #ffd700;
+  text-shadow: 1px 1px 6px #ffb700cc;
+}
+
+/* ===== Login Screen ===== */
+#login-screen {
+  max-width: 380px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  padding: 30px 35px;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(255, 94, 98, 0.6);
+  box-sizing: border-box;
+}
+#login-screen h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 1px 1px 4px #b33838;
+}
+#login-screen label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #b33838cc;
+}
+#login-screen input[type="text"],
+#login-screen input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 22px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: inset 0 0 7px #ff8a80;
+  transition: box-shadow 0.3s ease;
+}
+#login-screen input[type="text"]:focus,
+#login-screen input[type="password"]:focus {
+  box-shadow: inset 0 0 10px #fff;
+}
+#login-screen button {
+  width: 100%;
+  background: #fff;
+  color: #ff4b5c;
+  font-weight: 700;
+  padding: 14px 0;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 16px #ff4b5c99;
+  transition: background 0.3s ease;
+}
+#login-screen button:hover {
+  background: #ff4b5c;
+  color: #fff;
+  box-shadow: 0 8px 24px #ff4b5ccc;
+}
+
+/* ===== Admin Dashboard ===== */
+#admin-dashboard {
+  display: none;
+}
+
+nav.tabs {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+nav.tabs a {
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(102, 126, 234, 0.6);
+  transition: background 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+nav.tabs a.active,
+nav.tabs a:hover {
+  background: #ffd700;
+  color: #3e2e00;
+  box-shadow: 0 8px 24px #ffcc0088;
+}
+nav.tabs a.logout-btn {
+  margin-left: auto;
+  background: #ff4757 !important;
+}
+
+/* Tab Sections */
+section.tab-section {
+  display: none;
+  max-height: 700px;
+  overflow-y: auto;
+  padding: 0 15px;
+}
+section.tab-section.active {
+  display: block;
+}
+
+/* ===== Skill Review Section ===== */
+.skill-item {
+  background: #2a2a44;
+  border-radius: 15px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+}
+.skill-item strong {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.skill-item button {
+  margin-top: 10px;
+  margin-right: 15px;
+  padding: 9px 20px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 6px 14px rgba(255, 215, 0, 0.4);
+}
+.skill-item button.approve {
+  background: #2ecc71;
+  color: #fff;
+}
+.skill-item button.approve:hover {
+  background: #27ae60;
+}
+.skill-item button.reject {
+  background: #e74c3c;
+  color: #fff;
+}
+.skill-item button.reject:hover {
+  background: #c0392b;
+}
+.status {
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  user-select: none;
+}
+.status.pending {
+  background-color: #f39c12;
+  color: #fff;
+}
+.status
